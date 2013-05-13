@@ -2,13 +2,31 @@
 <html>
 <head>
   <title>RibbitApp</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag    "style", :media => "all" %>
+  <%= javascript_include_tag "less" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+	<header>
+		<div class="wrapper">
+		  <%= image_tag "gfx/logo.png" %>
+		  <span>Twitter Clone</span>
+		</div>
+	</header>
+	<div id="content">
+	  <div class="wrapper">
+		<% flash.each do |name, msg| %>
+			<%= content_tag :div, msg, class: "flash #{name}" %>
+		<% end %>
+		<%= yield %>
+	  </div>
+	</div>
+	<footer>
+		<div class="wrapper">
+		  Ribbit - A Twitter Clone 
+		</div>
+	</footer>
 
 </body>
 </html>
