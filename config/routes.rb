@@ -1,7 +1,13 @@
 RibbitApp::Application.routes.draw do
+  get "sessions/new"
+
+  get "sessions/destroy"
+
   resources :users
   
   root :to => "users#new" 
+  
+  post "sessions/create"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
