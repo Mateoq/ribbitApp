@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>RibbitApp</title>
-  <link rel="stylesheet/less" href="/style.less" />
+  <link rel="stylesheet/less" href="style.less" />
   <%= javascript_include_tag "less" %>
   <%= csrf_meta_tags %>
 </head>
@@ -16,11 +16,13 @@
 		  <%= link_to "Log Out", sessions_destroy_path %>
 		  <%= link_to "Public Ribbits", ribbits_path %>
 		<% else %>
-		  <%= form_tag sessions_create_path do %>
-		  	<%= text_field_tag :username, nil, placeholder: "username" %>
-		  	<%= password_field_tag :password, nil, placeholder: "password" %>
-		  	<%= submit_tag "Log In" %>
-		  <% end %>
+			<p>
+			  <%= form_tag sessions_create_path do %>
+			  	<%= text_field_tag :username, nil, placeholder: "username" %>
+			  	<%= password_field_tag :password, nil, placeholder: "password" %>
+			  	<%= submit_tag "Log In" %>
+			  <% end %>
+			</p>
 		<% end %>
 		</div>
 	</header>

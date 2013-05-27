@@ -1,4 +1,7 @@
 RibbitApp::Application.routes.draw do
+  resources :relationships
+
+
   resources :ribbits
 
 
@@ -13,6 +16,8 @@ RibbitApp::Application.routes.draw do
   post "sessions/create"
 
   match '/ribbits', :to => 'ribbits#index'
+
+  match '/:username', :to => 'user#show'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
