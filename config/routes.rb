@@ -4,7 +4,6 @@ RibbitApp::Application.routes.draw do
 
   resources :ribbits
 
-
   get "sessions/new"
 
   get "sessions/destroy"
@@ -17,7 +16,9 @@ RibbitApp::Application.routes.draw do
 
   match '/ribbits', :to => 'ribbits#index'
 
-  match '/:username', :to => 'user#show'
+  match '/:username', :to => 'users#show'
+
+  match '/buddies', :to => 'users#buddies'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
